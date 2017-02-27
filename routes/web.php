@@ -11,6 +11,21 @@
 |
 */
 
+use App\Task;
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
-    return view('welcome');
+    returnview('welcome');
+});
+
+Route::get('/task', function () {
+	//
+});
+
+Route::post('/task', function (Request $request) {
+	//
+});
+
+Route::delete('/task/{id}', function ($id) {
+	//
 });
