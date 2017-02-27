@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/task', function () {
-	//
+	return view('tasks');
 });
 
 Route::post('/task', function (Request $request) {
