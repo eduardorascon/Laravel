@@ -19,7 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/task', function () {
-	return view('tasks');
+	$tasks = Task::orderBy('created_at', 'asc')->get();
+
+	return view('tasks', [
+		'tasks' => $tasks
+	]);
 });
 
 Route::post('/task', function (Request $request) {
@@ -32,6 +36,12 @@ Route::post('/task', function (Request $request) {
 		->withInput()
 		->withErrors($validator);
 	}
+
+	$task = new Task;
+	$task->name = $request->name;
+	$task->save();
+
+	return redirect('/task');
 });
 
 Route::delete('/task/{id}', function ($id) {
