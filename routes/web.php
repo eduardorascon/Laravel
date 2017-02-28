@@ -48,4 +48,7 @@ Route::delete('/task/{id}', function ($id) {
 	Task::findOrFail($id)->delete();
 
 	return redirect('/task');
+
+Route::resource('user', 'UserController');
+
 });
