@@ -14,6 +14,8 @@
 use App\Task;
 use Illuminate\Http\Request;
 
+Route::get('/test', 'TestChartController@index');
+
 Route::get('/', function () {
     return view('welcome');
 });
